@@ -1,0 +1,112 @@
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.cnam.quizapp.Fragments.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/loginfragment">
+        <action
+            android:id="@+id/action_loginFragment_to_categoriesFragment"
+            app:destination="@id/categoriesFragment">
+            <argument
+                android:name="username"
+                app:argType="string"
+                app:nullable="false" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/categoriesFragment"
+        android:name="com.cnam.quizapp.Fragments.CategoriesFragment"
+        android:label="Categories"
+        tools:layout="@layout/categoriesfragment">
+        <argument
+            android:name="username"
+            app:argType="string"
+            app:nullable="false" />
+        <action
+            android:id="@+id/action_categoriesFragment_to_questionsFragment"
+            app:destination="@id/questionsFragment">
+            <argument
+                android:name="category"
+                app:argType="string"
+                app:nullable="false" />
+            <argument
+                android:name="username"
+                app:argType="string"
+                app:nullable="false" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/questionsFragment"
+        android:name="com.cnam.quizapp.Fragments.QuestionsFragment"
+        android:label="Questions"
+        tools:layout="@layout/questionsfragment">
+        <argument
+            android:name="category"
+            app:argType="string"
+            app:nullable="false" />
+        <argument
+            android:name="username"
+            app:argType="string"
+            app:nullable="false" />
+        <action
+            android:id="@+id/action_questionsFragment_to_resultFragment"
+            app:destination="@id/resultFragment">
+            <argument
+                android:name="correctAnswers"
+                app:argType="integer"
+                app:nullable="false" />
+            <argument
+                android:name="username"
+                app:argType="string"
+                app:nullable="false" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/resultFragment"
+        android:name="com.cnam.quizapp.Fragments.ResultFragment"
+        android:label="Result"
+        tools:layout="@layout/resultfragment">
+        <argument
+            android:name="correctAnswers"
+            app:argType="integer"
+            app:nullable="false" />
+        <argument
+            android:name="username"
+            app:argType="string"
+            app:nullable="false" />
+        <action
+            android:id="@+id/action_resultFragment_to_categoriesFragment"
+            app:destination="@id/categoriesFragment">
+            <argument
+                android:name="username"
+                app:argType="string"
+                app:nullable="false" />
+        </action>
+        <action
+            android:id="@+id/action_resultFragment_to_scoresFragment"
+            app:destination="@id/scoresFragment">
+            <argument
+                android:name="username"
+                app:argType="string"
+                app:nullable="false" />
+        </action>
+    </fragment>
+
+    <fragment
+        android:id="@+id/scoresFragment"
+        android:name="com.cnam.quizapp.Fragments.ScoresFragment"
+        android:label="Scores"
+        tools:layout="@layout/scorefragment">
+        <argument
+            android:name="username"
+            app:argType="string"
+            app:nullable="false" />
+    </fragment>
+</navigation>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:orientation="vertical"
+    tools:context=".Fragments.LoginFragment">
+
+    <EditText
+        android:id="@+id/etUsername"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corners"
+        android:hint="Pseudo 😉"
+        android:padding="10dp"
+        android:textColor="@color/black"
+        android:textSize="18sp"
+        android:layout_gravity="center"
+        android:layout_marginTop="180dp" />
+
+    <Button
+        android:id="@+id/btnLogin"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/rounded_corners"
+        android:text="Commencer"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_marginTop="55dp"
+        android:layout_gravity="center"/>
+
+</LinearLayout>
